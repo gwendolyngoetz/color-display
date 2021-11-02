@@ -1,0 +1,220 @@
+﻿@model ColorViewModel
+@{
+    ViewData["Title"] = "Color " + @Model.HexColor;
+    ViewData["ActivePage"] = "color";
+}
+
+@section CssRootColors {
+
+    <style>
+        :root {
+            --color-header-text: #ffffff;
+            --color-header-background: #@Model.HexColor;
+            --color-header-active-background: #@Model.Square1HexColor;
+        }
+    </style>
+}
+
+<div class="row">
+    <div class="column">
+        @*<d:last-childv class="box" style="background-color: #@Model.HexColor;"></div>*@
+        <h1 style="color: #@Model.HexColor;">Color #@Model.HexColor</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        <h2>Color Space</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Hex</td>
+                    <td>#@Model.HexColor</td>
+                </tr>
+                <tr>
+                    <td>RGB</td>
+                    <td>@Model.RgbColorString</td>
+                </tr>
+                <tr>
+                    <td>HSL</td>
+                    <td>@Model.HslColorString</td>
+                </tr>
+                <tr>
+                    <td>HSV</td>
+                    <td>@Model.HsvColorString</td>
+                </tr>
+            </tbody>
+        </table>    
+    </div>
+    <div class="column">
+        <h2>Base Numbers</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Base</th>
+                    <th>Red</th>
+                    <th>Green</th>
+                    <th>Blue</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Binary</td>
+                    <td>@Model.BinaryR</td>
+                    <td>@Model.BinaryG</td>
+                    <td>@Model.BinaryB</td>
+                </tr>
+                <tr>
+                    <td>Octal</td>
+                    <td>@Model.OctalR</td>
+                    <td>@Model.OctalG</td>
+                    <td>@Model.OctalB</td>
+                </tr>
+                <tr>
+                    <td>Decimal</td>
+                    <td>@Model.DecimalR</td>
+                    <td>@Model.DecimalG</td>
+                    <td>@Model.DecimalB</td>
+                </tr>
+                <tr>
+                    <td>Hex</td>
+                    <td>@Model.HexR</td>
+                    <td>@Model.HexG</td>
+                    <td>@Model.HexB</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        <h2>Complementary</h2>
+        @{await RenderColorSwatch(Model.HexColor, Model.ComplementaryHexColor);}
+    </div>
+    <div class="column">
+        <h2>Triadic</h2>
+        @{await RenderColorSwatch(Model.HexColor, Model.Triadic0HexColor, Model.Triadic1HexColor);}
+    </div>
+    <div class="column">
+        <h2>Analagous</h2>
+        @{await RenderColorSwatch(Model.HexColor, Model.Analagous0HexColor, Model.Analagous1HexColor);}
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        <h2>Tetradic</h2>
+        @{await RenderColorSwatch(Model.HexColor, Model.Tetradic0HexColor, Model.Tetradic1HexColor, Model.Tetradic2HexColor);}
+    </div>
+    <div class="column">
+        <h2>Square</h2>
+        @{await RenderColorSwatch(Model.HexColor, Model.Square0HexColor, Model.Square1HexColor, Model.Square2HexColor);}
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        <h2>Shades</h2>
+        @{await RenderColorSwatch(Model.Shades);}
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        <h2>Tints</h2>
+        @{await RenderColorSwatch(Model.Tints);}
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        <h2>On Black</h2>
+        <div class="background-preview" style="background-color: black; border: 1px solid black;">
+            <div style="background-color: #@Model.HexColor;"></div>
+            <div style="color: #@Model.HexColor;">Lorem ipsum</div>
+        </div>
+    </div>
+    <div class="column">
+        <h2>On White</h2>
+        <div class="background-preview" style="background-color: white; border: 1px solid black;">
+            <div style="background-color: #@Model.HexColor;"></div>
+            <div style="color: #@Model.HexColor;">Lorem ipsum</div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        <h2>Text</h2>
+        <div class="example-box" style="color: #@Model.HexColor;">Lorem ipsum dolar sit amet</div>
+        <pre style="border-left-color: #@Model.HexColor;"><code>.color {
+    color: #@Model.HexColor;
+}
+
+&lt;div class=&quot;color&quot;&gt;
+    Lorem ipsum dolar sit amet
+&lt;/div&gt;</code></pre>
+    </div>
+    <div class="column">
+        <h2>Background</h2>
+        <div class="example-box" style="color: #@Model.ComplementaryHexColor;background-color: #@Model.HexColor;">Lorem ipsum dolar sit amet</div>
+        <pre style="border-left-color: #@Model.HexColor;"><code>.background-color {
+    background-color: #@Model.HexColor;
+}
+
+&lt;div class=&quot;background-color&quot;&gt;
+    Lorem ipsum dolar sit amet
+&lt;/div&gt;</code></pre>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        <h2>Border</h2>
+        <div class="example-box" style="color: #@Model.HexColor;border: 1px solid #@Model.HexColor;">Lorem ipsum dolar sit amet</div>
+ 
+        <pre style="border-left-color: #@Model.HexColor;"><code>.border {
+    border: 1px solid #@Model.HexColor;
+}
+
+&lt;div class=&quot;border&quot;&gt;
+    Lorem ipsum dolar sit amet
+&lt;/div&gt;</code></pre>
+    </div>
+    <div class="column">
+        <h2>Box Shadow</h2>
+        <div class="example-box" style="color: #@Model.HexColor;box-shadow: 1px 1px 3px 2px #@Model.HexColor;">Lorem ipsum dolar sit amet</div>
+        <pre style="border-left-color: #@Model.HexColor;"><code>.box-shadow {
+    box-shadow: 1px 1px 3px 2px #@Model.HexColor;
+}
+
+&lt;div class=&quot;box-shadow&quot;&gt;
+    Lorem ipsum dolar sit amet
+&lt;/div&gt;</code></pre>
+    </div>
+</div>
+
+@functions {
+    async Task RenderColorSwatch(params string[] colors)
+    {
+        <ul class="color-swatch">
+        @foreach (var color in colors)
+        {
+            await RenderColorLink(color);
+        }
+        </ul>
+    }
+
+    // Keep the li elements right next to the curly braces or it will add in an extra space causing ui issues
+    async Task RenderColorLink(string hexColor)
+    {<li style="color: #@hexColor;background-color: #@hexColor;">
+        <a asp-area="" asp-controller="Color" asp-action="Index" asp-route-colorHex="@hexColor"><span>#@hexColor</span></a>
+    </li>}
+}

@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Color Display</title>
+    <link rel="stylesheet" type="text/css" href="~/css/milligram-v1.4.1.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+    @RenderSection("CssRootColors", required: false)
+</head>    
+@{
+    var activeHome =  ViewData["ActivePage"].ToString() == "home"  ? "active" : "";
+    var activeColor = ViewData["ActivePage"].ToString() == "color" ? "active" : "";
+}
+<body>
+<div class="container container-header">
+    <header>
+        <nav>
+            <div>
+                <div class="navbar">
+                    <ul>
+                        <li>
+                            <a class="@activeHome" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li><li>
+                            <a class="@activeColor" asp-area="" asp-controller="Color" asp-action="Index">Color</a>
+                        </li><li>
+                            <input style="width: 100px" id="colorHex" type="text" value="ff00ff" placeholder="ffffff" />
+                            <input type="submit" value="Go" onclick = "location.href = '/color/' + document.getElementById('colorHex').value;return false;" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+</div>
+<div class="container">
+    <div>
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+    <footer>
+        <div>
+            
+        </div>
+    </footer>
+</div>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
