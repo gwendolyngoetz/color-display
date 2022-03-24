@@ -13,8 +13,8 @@
     var activeColor = ViewData["ActivePage"].ToString() == "color" ? "active" : "";
 }
 <body>
-<div class="container container-header">
-    <header>
+<header>
+    <div class="container container-header">
         <nav>
             <div>
                 <div class="navbar">
@@ -31,20 +31,21 @@
                 </div>
             </div>
         </nav>
-    </header>
-</div>
+    </div>
+</header>
+
 <div class="container">
     <div>
         <main role="main">
             @RenderBody()
         </main>
     </div>
-    <footer>
-        <div>
-            
-        </div>
-    </footer>
 </div>
+<footer>
+    <div>
+        
+    </div>
+</footer>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
