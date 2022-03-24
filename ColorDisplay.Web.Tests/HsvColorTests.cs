@@ -31,7 +31,7 @@ namespace ColorDisplay.Web.tests
         {
             var hsvColor = new HsvColor(h, s, v);
 
-            hsvColor.ColorString.ShouldBe($"hsv({Math.Round(h, 1)}°, {s*100}%, {v*100}%)");
+            hsvColor.ColorString.ShouldBe($"hsv({Math.Round(h, 1)}&deg;, {s*100}%, {v*100}%)");
         }
 
 

@@ -24,7 +24,7 @@ namespace ColorDisplay.Web.DataModels
             var s = Math.Round(S, 3) * 100;
             var v = Math.Round(V, 3) * 100;
 
-            return $"hsv({h}°, {s}%, {v}%)";
+            return $"hsv({h}&deg;, {s}%, {v}%)";
         }
 
         public HsvColor ComplementaryColor()

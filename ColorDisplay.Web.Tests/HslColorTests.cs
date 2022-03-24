@@ -28,7 +28,7 @@ namespace ColorDisplay.Web.tests
         {
             var hslColor = new HslColor(h, s, l);
 
-            hslColor.ColorString.ShouldBe($"hsl({h}°, {s*100}%, {l*100}%)");
+            hslColor.ColorString.ShouldBe($"hsl({h}&deg;, {s*100}%, {l*100}%)");
         }
     }
 }

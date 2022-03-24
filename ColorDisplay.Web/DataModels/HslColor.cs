@@ -16,7 +16,7 @@ namespace ColorDisplay.Web.DataModels
             var s = Math.Round(S, 3) * 100;
             var l = Math.Round(L, 3) * 100;
 
-            return $"hsl({h}°, {s}%, {l}%)";
+            return $"hsl({h}&deg;, {s}%, {l}%)";
         }
 
         public HslColor(double h, double s, double l)
