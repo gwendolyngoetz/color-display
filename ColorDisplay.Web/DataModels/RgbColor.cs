@@ -23,9 +23,9 @@ namespace ColorDisplay.Web.DataModels
         {
             rgbColorString = rgbColorString.Replace("rgb(", "").Replace(")", "").Replace(" ", "");
             var split = rgbColorString.Split(',');
-            var r = int.Parse(split[0]);
-            var g = int.Parse(split[1]);
-            var b = int.Parse(split[2]);
+            var r = int.Parse(split[0].Trim());
+            var g = int.Parse(split[1].Trim());
+            var b = int.Parse(split[2].Trim());
 
             return (r, g, b);
         }
@@ -84,6 +84,11 @@ namespace ColorDisplay.Web.DataModels
             return new HsvColor(h, s, v);
         }
 
+        public HslColor ToHsl()
+        {
+            return new HslColor(this);
+        }
+    
         public IEnumerable<RgbColor> GetTints(int numberOfTints)
         {
             var result = new List<RgbColor>();
@@ -130,10 +135,11 @@ namespace ColorDisplay.Web.DataModels
 
             return result;
         }
-
-        public HslColor ToHsl()
+    
+        public static RgbColor Parse(string rgbColorString)
         {
-            return new HslColor(this);
+            var (r, g, b) = GetRgbFromColorString(rgbColorString);
+            return new RgbColor(r, g, b);
         }
     }
 }
