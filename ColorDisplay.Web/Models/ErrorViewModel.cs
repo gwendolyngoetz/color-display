@@ -1,5 +1,3 @@
-using System;
-
 namespace ColorDisplay.Web.Models
 {
     public class ErrorViewModel
