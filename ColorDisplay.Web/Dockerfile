@@ -16,6 +16,9 @@ RUN dotnet build "ColorDisplay.Web.csproj" -c Release -o /app/build
 FROM build AS publish
 RUN dotnet publish "ColorDisplay.Web.csproj" -c Release -o /app/publish
 
+ARG VERSION
+ENV VERSION=$VERSION
+
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
