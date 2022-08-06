@@ -10,7 +10,10 @@ on:
     branches: [ master ]
     paths-ignore:
       - '**.md'
-      
+
+env:
+  PRIVATE_DOCKER_REGISTRY: sample-registry
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -26,13 +29,4 @@ jobs:
       run: bin/build-web.sh
       
     - name: Build Container
-      run: PRIVATE_DOCKER_REGISTRY=sample-registry bin/build-container.sh
-  
- #   - name: Restore dependencies
- #     run: dotnet restore
-    
- #   - name: Build
- #     run: dotnet build --no-restore
-    
- #   - name: Test
- #     run: dotnet test --no-build --verbosity normal
+      run: bin/build-container.sh
