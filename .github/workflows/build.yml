@@ -32,6 +32,9 @@ jobs:
       
     - name: Build Container
       run: bin/build-container.sh
+      
+    - name: List Docker
+      run: "docker images | sort"
 
     - name: Push Container
       run: bin/push-container.sh
