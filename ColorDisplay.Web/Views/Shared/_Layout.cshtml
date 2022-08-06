@@ -1,8 +1,12 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var version = System.Environment.GetEnvironmentVariable("VERSION");
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="version" content="@version" />
     <title>@ViewData["Title"] - Color Display</title>
     <link rel="stylesheet" type="text/css" href="~/css/milligram-v1.4.1.min.css" />
     <link rel="stylesheet" type="text/css" href="~/css/site.css" />
