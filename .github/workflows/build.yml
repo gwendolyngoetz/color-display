@@ -32,3 +32,6 @@ jobs:
       
     - name: Build Container
       run: bin/build-container.sh
+
+    - name: Push Container
+      run: bin/push-container.sh
