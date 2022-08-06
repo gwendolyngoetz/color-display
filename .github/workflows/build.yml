@@ -26,7 +26,7 @@ jobs:
       run: bin/build-web.sh
       
     - name: Build Container
-      run: bin/build=container.sh
+      run: bin/build-container.sh
   
  #   - name: Restore dependencies
  #     run: dotnet restore
