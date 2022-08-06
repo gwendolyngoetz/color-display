@@ -11,5 +11,6 @@ fi
 
 docker login https://${registry} --username ${username} --password ${password}
 docker push ${container}:${tag}
+docker push ${container}:${version}
 
 popd > /dev/null
