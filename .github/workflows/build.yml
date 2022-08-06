@@ -12,7 +12,9 @@ on:
       - '**.md'
 
 env:
-  PRIVATE_DOCKER_REGISTRY: sample-registry
+  PRIVATE_DOCKER_REGISTRY: ${{ secrets.REGISTRY_HOSTNAME }}
+  PRIVATE_REGISTRY_USERNAME: ${{ secrets.REGISTRY_USERNAME }}
+  PRIVATE_REGISTRY_PASSWORD: ${{ secrets.REGISTRY_PASSWORD }}
 
 jobs:
   build:
