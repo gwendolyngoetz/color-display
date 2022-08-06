@@ -15,7 +15,7 @@ if [[ -z "${PRIVATE_REGISTRY_PASSWORD}" ]]; then
     exit 1
 fi
 
-export version="$(date +"%Y%m%d%H%M%S")"
+export version="${VERSION}"
 export registry="${PRIVATE_DOCKER_REGISTRY}"
 export username="${PRIVATE_REGISTRY_USERNAME}"
 export password="${PRIVATE_REGISTRY_PASSWORD}"
