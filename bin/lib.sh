@@ -5,8 +5,14 @@ if [[ -z "${PRIVATE_DOCKER_REGISTRY}" ]]; then
     exit 1
 fi
 
+if [[ -z "${PRIVATE_REGISTRY_USERNAME}" ]]; then
+    echo "Did not find environment variable: PRIVATE_REGISTRY_USERNAME"
+    exit 1
+fi
+
 export version="$(date +"%Y%m%d%H%M%S")"
 export registry="${PRIVATE_DOCKER_REGISTRY}"
+export username="${PRIVATE_REGISTRY_USERNAME}"
 export container="${registry}/gwendolyngoetz/color-display"
 export tag="latest"
 
