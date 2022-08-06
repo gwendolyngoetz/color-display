@@ -9,7 +9,7 @@ if [[ "$(docker images -q ${container}:${tag} 2> /dev/null)" == "" ]]; then
     exit 1
 fi
 
-docker login https://${registry} --username ${username}
+docker login https://${registry} --username ${username} --password ${password}
 docker push ${container}:${tag}
 
 popd > /dev/null
