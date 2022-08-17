@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="version" content="@version" />
     <title>@ViewData["Title"] - Color Display</title>
-    <link rel="stylesheet" type="text/css" href="~/css/milligram-v1.4.1.min.css" />
     <link rel="stylesheet" type="text/css" href="~/css/site.css" />
     @RenderSection("CssRootColors", required: false)
 </head>    
@@ -29,7 +28,7 @@
                             <a class="@activeColor" asp-area="" asp-controller="Color" asp-action="Index">Color</a>
                         </li><li>
                             <input style="width: 128px" id="colorHex" type="text" value="ff00ff" placeholder="ffffff" />
-                            <input type="submit" value="Go" onclick = "location.href = '/color/' + document.getElementById('colorHex').value;return false;" />
+                            <input class="button" type="submit" value="Go" onclick = "location.href = '/color/' + document.getElementById('colorHex').value;return false;" />
                         </li>
                     </ul>
                 </div>
@@ -50,7 +49,7 @@
         
     </div>
 </footer>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    @* <script src="~/js/site.js" asp-append-version="true"></script> *@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

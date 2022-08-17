@@ -1,0 +1,42 @@
+.container {
+    background-color: #ffffff;
+    margin: 0 auto;
+    max-width: 112.0rem;
+    padding: 0 2.0rem;
+    width: 100%;
+}
+
+.container-header {
+    padding-left: 0;
+    padding-right: 0;
+    background-color: #ffffff;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    width: 100%;
+}
+
+.row .column {
+    display: block;
+    flex: 1 1 auto;
+    margin-left: 0;
+    max-width: 100%;
+    width: 100%;
+}
+
+
+@media (min-width: 40rem) {
+    .row {
+        flex-direction: row;
+        margin-left: -1.0rem;
+        width: calc(100% + 2.0rem);
+    }
+
+    .row .column {
+        margin-bottom: inherit;
+        padding: 0 1.0rem;
+    }
+}

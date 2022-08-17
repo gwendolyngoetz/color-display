@@ -1,0 +1,62 @@
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--color-header-background);
+}
+
+.navbar li {
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+}
+
+.navbar li a {
+    display: block;
+    color: var(--color-header-text);
+    text-align: center;
+    padding: 1em;
+    text-decoration: none;
+}
+
+.navbar li input[type=text] {
+    display: inline-block;
+    padding: 1em;
+    text-decoration: none;
+    margin-left: 1em;
+    border: 0.1rem solid #d1d1d1;
+    margin-bottom: 0px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.navbar li input[type=text]:focus {
+    border-width: 0;
+    border: 1px solid #d1d1d1;
+}
+
+.navbar li input[type=submit].button {
+    display: inline-block;
+    margin-bottom: 0px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-top-left-radius: 0;
+    background-color: var(--color-header-active-background);
+    border-color: var(--color-header-active-background);
+    border-bottom-left-radius: 0;
+}
+
+.navbar li input[type=submit].button:hover {
+    background-color: var(--color-header-hover);
+    border-color: var(--color-header-hover);
+}
+
+.navbar li a:hover {
+    background-color: var(--color-header-hover);
+}
+
+.navbar li a.active {
+    font-weight: bold;
+    background-color: var(--color-header-active-background);
+}

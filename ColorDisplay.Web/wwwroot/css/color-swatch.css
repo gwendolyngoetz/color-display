@@ -1,0 +1,39 @@
+
+ul.color-swatch {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+ul.color-swatch li {
+    height: 100px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+}
+
+ul.color-swatch a {
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul.color-swatch a span {
+    overflow: hidden;
+}
+
+ul.color-swatch a:hover {
+    color: #ffffff;
+}
+
+@media only screen and (max-width: 583px) {
+    ul.color-swatch a span {
+        display: none;
+    }
+}
