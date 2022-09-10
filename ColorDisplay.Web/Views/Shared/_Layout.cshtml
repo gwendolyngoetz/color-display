@@ -18,34 +18,33 @@
 <body>
 <header>
     <div class="container container-header">
-        <nav>
-            <div>
-                <div class="navbar">
+        <div class="row">
+            <div class="column">
+                <nav class="navbar">
                     <ul>
-                        <li>
-                            <a class="@activeHome" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li><li>
-                            <a class="@activeColor" asp-area="" asp-controller="Color" asp-action="Index">Color</a>
-                        </li><li>
-                            <input style="width: 128px" id="colorHex" type="text" value="ff00ff" placeholder="ffffff" />
-                            <input class="button" type="submit" value="Go" onclick = "location.href = '/color/' + document.getElementById('colorHex').value;return false;" />
+                        <li class="@activeHome">
+                            <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li><li class="@activeColor">
+                            <a asp-area="" asp-controller="Color" asp-action="Index">Color</a>
                         </li>
                     </ul>
-                </div>
+                    <input id="colorHex" type="text" value="ff00ff" placeholder="ffffff" /><input class="button" type="submit" value="Go" onclick = "location.href = '/color/' + document.getElementById('colorHex').value;return false;" />
+                </nav>
             </div>
-        </nav>
+        </div>
     </div>
 </header>
 
-<div class="container">
-    <div>
-        <main role="main">
+<main role="main">
+    <div class="container">
+        <div>
             @RenderBody()
-        </main>
+        </div>
     </div>
-</div>
+</main>
+
 <footer>
-    <div>
+    <div class="container">
         
     </div>
 </footer>

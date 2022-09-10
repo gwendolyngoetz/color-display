@@ -8,9 +8,9 @@
 
     <style>
         :root {
-            --color-header-text: #ffffff;
-            --color-header-background: #@Model.HexColor;
-            --color-header-active-background: #@Model.Square1HexColor;
+            --color-branding-text: #ffffff;
+            --color-branding-background: #@Model.HexColor;
+            --color-branding-active-background: #@Model.Square1HexColor;
         }
     </style>
 }
@@ -24,7 +24,7 @@
 
 <div class="row">
     <div class="column">
-        <h2>Color Space</h2>
+        <h3>Color Space</h3>
         <table>
             <thead>
                 <tr>
@@ -53,7 +53,7 @@
         </table>    
     </div>
     <div class="column">
-        <h2>Base Numbers</h2>
+        <h3>Base Numbers</h3>
         <table>
             <thead>
                 <tr>
@@ -95,54 +95,54 @@
 
 <div class="row">
     <div class="column">
-        <h2>Complementary</h2>
+        <h3>Complementary</h3>
         @{await RenderColorSwatch(Model.HexColor, Model.ComplementaryHexColor);}
     </div>
     <div class="column">
-        <h2>Triadic</h2>
+        <h3>Triadic</h3>
         @{await RenderColorSwatch(Model.HexColor, Model.Triadic0HexColor, Model.Triadic1HexColor);}
     </div>
     <div class="column">
-        <h2>Analagous</h2>
+        <h3>Analagous</h3>
         @{await RenderColorSwatch(Model.HexColor, Model.Analagous0HexColor, Model.Analagous1HexColor);}
     </div>
 </div>
 
 <div class="row">
     <div class="column">
-        <h2>Tetradic</h2>
+        <h3>Tetradic</h3>
         @{await RenderColorSwatch(Model.HexColor, Model.Tetradic0HexColor, Model.Tetradic1HexColor, Model.Tetradic2HexColor);}
     </div>
     <div class="column">
-        <h2>Square</h2>
+        <h3>Square</h3>
         @{await RenderColorSwatch(Model.HexColor, Model.Square0HexColor, Model.Square1HexColor, Model.Square2HexColor);}
     </div>
 </div>
 
 <div class="row">
     <div class="column">
-        <h2>Shades</h2>
+        <h3>Shades</h3>
         @{await RenderColorSwatch(Model.Shades);}
     </div>
 </div>
 
 <div class="row">
     <div class="column">
-        <h2>Tints</h2>
+        <h3>Tints</h3>
         @{await RenderColorSwatch(Model.Tints);}
     </div>
 </div>
 
 <div class="row">
     <div class="column">
-        <h2>On Black</h2>
+        <h3>On Black</h3>
         <div class="background-preview" style="background-color: black; border: 1px solid black;">
             <div style="background-color: #@Model.HexColor;"></div>
             <div style="color: #@Model.HexColor;">Lorem ipsum</div>
         </div>
     </div>
     <div class="column">
-        <h2>On White</h2>
+        <h3>On White</h3>
         <div class="background-preview" style="background-color: white; border: 1px solid black;">
             <div style="background-color: #@Model.HexColor;"></div>
             <div style="color: #@Model.HexColor;">Lorem ipsum</div>
@@ -152,7 +152,7 @@
 
 <div class="row">
     <div class="column">
-        <h2>Text</h2>
+        <h3>Text</h3>
         <div class="example-box" style="color: #@Model.HexColor;">Lorem ipsum dolar sit amet</div>
         <pre style="border-left-color: #@Model.HexColor;"><code>.color {
     color: #@Model.HexColor;
@@ -163,7 +163,7 @@
 &lt;/div&gt;</code></pre>
     </div>
     <div class="column">
-        <h2>Background</h2>
+        <h3>Background</h3>
         <div class="example-box" style="color: #@Model.ComplementaryHexColor;background-color: #@Model.HexColor;">Lorem ipsum dolar sit amet</div>
         <pre style="border-left-color: #@Model.HexColor;"><code>.background-color {
     background-color: #@Model.HexColor;
@@ -177,7 +177,7 @@
 
 <div class="row">
     <div class="column">
-        <h2>Border</h2>
+        <h3>Border</h3>
         <div class="example-box" style="color: #@Model.HexColor;border: 1px solid #@Model.HexColor;">Lorem ipsum dolar sit amet</div>
  
         <pre style="border-left-color: #@Model.HexColor;"><code>.border {
@@ -189,7 +189,7 @@
 &lt;/div&gt;</code></pre>
     </div>
     <div class="column">
-        <h2>Box Shadow</h2>
+        <h3>Box Shadow</h3>
         <div class="example-box" style="color: #@Model.HexColor;box-shadow: 1px 1px 3px 2px #@Model.HexColor;">Lorem ipsum dolar sit amet</div>
         <pre style="border-left-color: #@Model.HexColor;"><code>.box-shadow {
     box-shadow: 1px 1px 3px 2px #@Model.HexColor;

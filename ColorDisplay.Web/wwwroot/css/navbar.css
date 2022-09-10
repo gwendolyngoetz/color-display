@@ -1,62 +1,77 @@
-.navbar ul {
+/* .navbar ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: var(--color-header-background);
-}
+} */
 
 .navbar li {
-    padding: 0;
-    margin: 0;
     display: inline-flex;
 }
 
+.navbar li:hover {
+    background-color: var(--color-branding-hover);
+}
+
+.navbar li.active {
+    background-color: var(--color-branding-active-background);
+} 
+
 .navbar li a {
     display: block;
-    color: var(--color-header-text);
+    color: var(--color-branding-text);
     text-align: center;
-    padding: 1em;
+    padding: 1.2rem 1.2rem 1rem 1.2rem;
     text-decoration: none;
+    text-transform: capitalize;
+    line-height: 1.2rem;
 }
 
-.navbar li input[type=text] {
-    display: inline-block;
-    padding: 1em;
-    text-decoration: none;
-    margin-left: 1em;
+.navbar input[type="text"] {
+
+    margin-left: 1rem;
     border: 0.1rem solid #d1d1d1;
-    margin-bottom: 0px;
+    background-color: #ffffff;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+    border-top-left-radius: 0.1rem;
+    border-bottom-left-radius: 0.1rem;
+    width: 9rem;
+    padding: 0.2rem 0.1rem 0rem 0.4rem;
+
+
 }
 
-.navbar li input[type=text]:focus {
+.navbar input[type="submit"].button {
+
+    border-top-right-radius: 0.1rem;
+    border-bottom-right-radius: 0.1rem;;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: var(--color-branding-active-background);
+    border: 0.1rem solid var(--color-branding-active-background);
+    cursor: pointer;
+    font-weight: 700;
+    padding: 0.2rem 0.4rem 0rem 0.4rem;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.navbar input[type="submit"].button:hover {
+    background-color: var(--color-branding-hover);
+    border-color: var(--color-branding-hover);
+} 
+
+.navbar input[type="text"]:focus {
     border-width: 0;
     border: 1px solid #d1d1d1;
 }
 
-.navbar li input[type=submit].button {
-    display: inline-block;
-    margin-bottom: 0px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    border-top-left-radius: 0;
-    background-color: var(--color-header-active-background);
-    border-color: var(--color-header-active-background);
-    border-bottom-left-radius: 0;
-}
-
-.navbar li input[type=submit].button:hover {
-    background-color: var(--color-header-hover);
-    border-color: var(--color-header-hover);
-}
-
-.navbar li a:hover {
-    background-color: var(--color-header-hover);
-}
-
-.navbar li a.active {
-    font-weight: bold;
-    background-color: var(--color-header-active-background);
-}
+.button:focus,
+.button:hover {
+    background-color: #606c76;
+    border-color: #606c76;
+    color: #fff;
+    outline: 0;
+} 
