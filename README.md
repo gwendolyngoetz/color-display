@@ -1,5 +1,7 @@
 [![Build and Deploy](https://github.com/gwendolyngoetz/color-display/actions/workflows/build-and-deploy.yml/badge.svg)](https://github.com/gwendolyngoetz/color-display/actions/workflows/build-and-deploy.yml)
 
+# color-display
+
 ## About
 
 * Mobile friendly
