@@ -18,7 +18,7 @@ namespace ColorDisplay.Web.Controllers
         [Route("color")]
         public IActionResult Index()
         {
-            return RedirectToAction("Index", new {colorHex = "5a4799"});
+            return RedirectToAction("Index", new { colorHex = "5a4799" });
         }
 
         [HttpGet]
