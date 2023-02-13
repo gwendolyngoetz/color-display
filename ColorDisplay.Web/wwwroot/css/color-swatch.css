@@ -14,6 +14,14 @@ ul.color-swatch li {
     display: inline-flex;
 }
 
+ul.color-swatch li:first-child {
+    border-radius: 1rem 0 0 1rem;
+}
+
+ul.color-swatch li:last-child {
+    border-radius: 0 1rem 1rem 0;
+}
+
 ul.color-swatch a {
     text-decoration: none;
     color: inherit;
