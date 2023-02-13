@@ -1,14 +1,14 @@
-﻿@import "base.css";
-@import "layout.css";
-@import "table.css";
-@import "navbar.css";
-@import "color-swatch.css";
-@import "forms.css";
+﻿@import 'base.css';
+@import 'layout.css';
+@import 'table.css';
+@import 'navbar.css';
+@import 'color-swatch.css';
+@import 'forms.css';
 
 :root {
-    --color-header-text: #ffffff;
-    --color-header-background: #5a4799;
-    --color-header-hover: #888888;
-    --color-header-active-background: #5386fe;
-    --color-header-active-background: #869947;
+  --color-header-text: #ffffff;
+  --color-header-background: #5a4799;
+  --color-header-hover: #888888;
+  --color-header-active-background: #5386fe;
+  --color-header-active-background: #869947;
 }
