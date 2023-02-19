@@ -6,70 +6,57 @@ namespace ColorDisplay.Web.DataModel
 {
    public class ColorInformation
    {
-        public HexColor HexColor { get; private set; }
-        public RgbColor RgbColor { get; private set; }
-        public HsvColor HsvColor { get; private set; }
-        public HslColor HslColor { get; private set; }
-
-        public HexColor ComplementaryHexColor { get; private set; }
-
-        public HexColor Triadic0HexColor { get; private set; }
-        public HexColor Triadic1HexColor { get; private set; }
-
-        public HexColor Tetradic0HexColor { get; private set; }
-        public HexColor Tetradic1HexColor { get; private set; }
-        public HexColor Tetradic2HexColor { get; private set; }
-
-        public HexColor Square0HexColor { get; private set; }
-        public HexColor Square1HexColor { get; private set; }
-        public HexColor Square2HexColor { get; private set; }
-
-        public HexColor Analagous0HexColor { get; private set; }
-        public HexColor Analagous1HexColor { get; private set; }
-
-        public IEnumerable<HexColor> Tints { get; private set; } = new List<HexColor>();
-        public IEnumerable<HexColor> Shades { get; private set; } = new List<HexColor>();
+        public Color Color { get; private set; }
+        public Color Complementary { get; private set; }
+        public TriadicColorGroup Triadic { get; private set; }
+        public TetradicColorGroup Tetradic { get; private set; }
+        public SquareColorGroup Square { get; private set; }
+        public AnalogousColorGroup Analogous { get; private set; }
+        public IEnumerable<Color> Tints { get; private set; } = new List<Color>();
+        public IEnumerable<Color> Shades { get; private set; } = new List<Color>();
 
         public ColorInformation(HexColor hexColor)
         {
-            HexColor = hexColor;
-            RgbColor = HexColor.ToRgb();
-            HsvColor = RgbColor.ToHsv();
-            HslColor = RgbColor.ToHsl();
-
+            Color = new Color(hexColor.ColorString);
             LoadRelatedColors();
         }
 
         public ColorInformation(RgbColor rgbColor)
         {
-            RgbColor = rgbColor;
-            HexColor = RgbColor.ToHex();
-            HsvColor = RgbColor.ToHsv();
-            HslColor = RgbColor.ToHsl();
-
+            Color = new Color(rgbColor.R, rgbColor.B, rgbColor.G);
             LoadRelatedColors();
         }
 
         public void LoadRelatedColors()
         {
-            ComplementaryHexColor = HsvColor.ComplementaryColor().ToRgb().ToHex();
+            var hsvColor = Color.HSV;
 
-            Triadic0HexColor = HsvColor.Triadic0().ToRgb().ToHex();
-            Triadic1HexColor = HsvColor.Triadic1().ToRgb().ToHex();
+            Complementary = new Color(hsvColor.ComplementaryColor().ToRgb().ToHex().ColorString);
 
-            Tetradic0HexColor = HsvColor.Tetradic0().ToRgb().ToHex();
-            Tetradic1HexColor = HsvColor.Tetradic1().ToRgb().ToHex();
-            Tetradic2HexColor = HsvColor.Tetradic2().ToRgb().ToHex();
+            Triadic = new TriadicColorGroup(
+                new Color(hsvColor.Triadic0().ToRgb().ToHex().ColorString),
+                new Color(hsvColor.Triadic1().ToRgb().ToHex().ColorString)
+            );
 
-            Square0HexColor = HsvColor.Square0().ToRgb().ToHex();
-            Square1HexColor = HsvColor.Square1().ToRgb().ToHex();
-            Square2HexColor = HsvColor.Square2().ToRgb().ToHex();
+            Tetradic = new TetradicColorGroup(
+                new Color(hsvColor.Tetradic0().ToRgb().ToHex().ColorString),
+                new Color(hsvColor.Tetradic1().ToRgb().ToHex().ColorString),
+                new Color(hsvColor.Tetradic2().ToRgb().ToHex().ColorString)
+            );
 
-            Analagous0HexColor = HsvColor.Analagous0().ToRgb().ToHex();
-            Analagous1HexColor = HsvColor.Analagous1().ToRgb().ToHex();
+            Square = new SquareColorGroup(
+                new Color(hsvColor.Square0().ToRgb().ToHex().ColorString),
+                new Color(hsvColor.Square1().ToRgb().ToHex().ColorString),
+                new Color(hsvColor.Square2().ToRgb().ToHex().ColorString)
+            );
 
-            Tints = RgbColor.GetTints(9).Select(x => x.ToHex());
-            Shades = RgbColor.GetShades(9).Select(x => x.ToHex());
+            Analogous = new AnalogousColorGroup(
+                new Color(hsvColor.Analagous0().ToRgb().ToHex().ColorString),
+                new Color(hsvColor.Analagous1().ToRgb().ToHex().ColorString)
+            );
+
+            Tints = hsvColor.ToRgb().GetTints(9).Select(x => new Color(x.ToHex().ColorString));
+            Shades = hsvColor.ToRgb().GetShades(9).Select(x => new Color(x.ToHex().ColorString));
         }
    }
     

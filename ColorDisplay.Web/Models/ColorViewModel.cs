@@ -47,45 +47,45 @@ namespace ColorDisplay.Web.Models
 
         public ColorViewModel(ColorInformation color)
         {
-            HexColor = color.HexColor.ColorString;
-            RgbColorString = color.RgbColor.ColorString;
-            HsvColorString = color.HsvColor.ColorString;
-            HslColorString = color.HslColor.ColorString;
+            HexColor = color.Color.Hex.ColorString;
+            RgbColorString = color.Color.RGB.ColorString;
+            HsvColorString = color.Color.HSV.ColorString;
+            HslColorString = color.Color.HSL.ColorString;
 
-            DecimalR = color.HexColor.DecimalR;
-            DecimalG = color.HexColor.DecimalG;
-            DecimalB = color.HexColor.DecimalB;
+            DecimalR = color.Color.Hex.DecimalR;
+            DecimalG = color.Color.Hex.DecimalG;
+            DecimalB = color.Color.Hex.DecimalB;
 
-            OctalR = color.HexColor.OctalR;
-            OctalG = color.HexColor.OctalG;
-            OctalB = color.HexColor.OctalB;
+            OctalR = color.Color.Hex.OctalR;
+            OctalG = color.Color.Hex.OctalG;
+            OctalB = color.Color.Hex.OctalB;
 
-            BinaryR = color.HexColor.BinaryR;
-            BinaryG = color.HexColor.BinaryG;
-            BinaryB = color.HexColor.BinaryB;
+            BinaryR = color.Color.Hex.BinaryR;
+            BinaryG = color.Color.Hex.BinaryG;
+            BinaryB = color.Color.Hex.BinaryB;
 
-            HexR = color.HexColor.R;
-            HexG = color.HexColor.G;
-            HexB = color.HexColor.B;
+            HexR = color.Color.Hex.R;
+            HexG = color.Color.Hex.G;
+            HexB = color.Color.Hex.B;
 
-            ComplementaryHexColor = color.ComplementaryHexColor.ColorString;
+            ComplementaryHexColor = color.Complementary.Hex.ColorString;
 
-            Triadic0HexColor = color.Triadic0HexColor.ColorString;
-            Triadic1HexColor = color.Triadic1HexColor.ColorString;
+            Triadic0HexColor = color.Triadic.Triadic0.Hex.ColorString;
+            Triadic1HexColor = color.Triadic.Triadic1.Hex.ColorString;
 
-            Tetradic0HexColor = color.Tetradic0HexColor.ColorString;
-            Tetradic1HexColor = color.Tetradic1HexColor.ColorString;
-            Tetradic2HexColor = color.Tetradic2HexColor.ColorString;
+            Tetradic0HexColor = color.Tetradic.Tetradic0.Hex.ColorString;
+            Tetradic1HexColor = color.Tetradic.Tetradic1.Hex.ColorString;
+            Tetradic2HexColor = color.Tetradic.Tetradic2.Hex.ColorString;
 
-            Square0HexColor = color.Square0HexColor.ColorString;
-            Square1HexColor = color.Square1HexColor.ColorString;
-            Square2HexColor = color.Square2HexColor.ColorString;
+            Square0HexColor = color.Square.Square0.Hex.ColorString;
+            Square1HexColor = color.Square.Square1.Hex.ColorString;
+            Square2HexColor = color.Square.Square2.Hex.ColorString;
 
-            Analagous0HexColor = color.Analagous0HexColor.ColorString;
-            Analagous1HexColor = color.Analagous1HexColor.ColorString;
+            Analagous0HexColor = color.Analogous.Analogous0.Hex.ColorString;
+            Analagous1HexColor = color.Analogous.Analogous1.Hex.ColorString;
 
-            Tints = color.Tints.Select(x => x.ColorString).ToArray();
-            Shades = color.Shades.Select(x => x.ColorString).ToArray();
+            Tints = color.Tints.Select(x => x.Hex.ColorString).ToArray();
+            Shades = color.Shades.Select(x => x.Hex.ColorString).ToArray();
         }
     }
 }
