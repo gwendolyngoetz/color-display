@@ -11,4 +11,11 @@
   --color-header-hover: #888888;
   --color-header-active-background: #5386fe;
   --color-header-active-background: #869947;
+  --color-light-text: #606c76;
+  --color-light-background: #ffffff;
+  --color-dark-text: #ffffff;
+  --color-dark-background: #000000;
+
+  --color-text: var(--color-light-text);
+  --color-background: var(--color-light-background);
 }

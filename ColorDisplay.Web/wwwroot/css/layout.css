@@ -1,5 +1,4 @@
 .container {
-  background-color: #ffffff;
   margin: 0 auto;
   max-width: 112rem;
   padding: 0 2rem;
@@ -9,7 +8,6 @@
 .container-header {
   padding-left: 0;
   padding-right: 0;
-  background-color: #ffffff;
 }
 
 .row {

@@ -9,7 +9,7 @@ input[type='text'] {
   background-color: #9b4dca;
   border: 0.1rem solid #9b4dca;
   border-radius: 0.4rem;
-  color: #fff;
+  color: #ffffff;
   cursor: pointer;
   display: inline-block;
   font-size: 1.1rem;
@@ -28,6 +28,17 @@ input[type='text'] {
 .button:hover {
   background-color: #606c76;
   border-color: #606c76;
-  color: #fff;
+  color: #ffffff;
   outline: 0;
+}
+
+label.form-label {
+  color: #ffffff;
+  margin-right: 1rem;
+}
+
+input[type='radio'] {
+  width: 1.8rem;
+  height: 1.8rem;
+  margin-right: 0.5rem;
 }

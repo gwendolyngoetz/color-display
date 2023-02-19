@@ -9,7 +9,8 @@ html {
 }
 
 body {
-  color: #606c76;
+  color: var(--color-text);
+  background-color: var(--color-background);
   font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-size: 1.6em;
   font-weight: 300;
@@ -65,9 +66,8 @@ img {
 }
 
 code {
-  background: #f4f5f6;
+  background-color: #f4f5f6;
   border-radius: 0.4rem;
-  font-size: 86%;
   margin: 0 0.2rem;
   padding: 0.2rem 0.5rem;
   white-space: nowrap;
@@ -75,7 +75,7 @@ code {
 
 pre {
   margin-bottom: 0;
-  background: #f4f5f6;
+  background-color: #f4f5f6;
   border-left: 0.3rem solid #9b4dca;
   overflow-y: hidden;
 }
