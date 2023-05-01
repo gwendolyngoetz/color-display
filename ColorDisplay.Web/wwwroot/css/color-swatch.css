@@ -13,6 +13,13 @@ ul.color-swatch li {
   display: inline-flex;
 }
 
+ul.color-swatch li:hover,
+ul.color-swatch li:first-child:hover,
+ul.color-swatch li:last-child:hover {
+  border-radius: 1rem;
+  transform: scale(1.25);
+}
+
 ul.color-swatch li:first-child {
   border-radius: 1rem 0 0 1rem;
 }
