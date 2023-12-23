@@ -23,6 +23,7 @@ namespace ColorDisplay.Web.tests
         [InlineData(255, 0,   0)]
         [InlineData(0,   0,   0)]
         [InlineData(255, 255, 255)]
+        [InlineData(90,  71,  153)]
         public void format_color_string(int r, int g, int b)
         {
             var rgbColor = new RgbColor(r, g, b);
@@ -35,6 +36,7 @@ namespace ColorDisplay.Web.tests
         [InlineData(0,   0,   0,   "000000")]
         [InlineData(255, 255, 255, "ffffff")]
         [InlineData(71,  134, 153, "478699")]
+        [InlineData(90,  71,  153, "5a4799")]
         public void convert_rgb_to_hex(int r, int g, int b, string hexString)
         {
             var rgbColor = new RgbColor(r, g, b);

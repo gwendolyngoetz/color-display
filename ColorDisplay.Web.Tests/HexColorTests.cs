@@ -24,6 +24,7 @@ namespace ColorDisplay.Web.tests
         [InlineData(255, 0,   0,   "ff", "00", "00")]
         [InlineData(0,   0,   0,   "00", "00", "00")]
         [InlineData(255, 255, 255, "ff", "ff", "ff")]
+        [InlineData(90,  71,  153, "5a", "47", "99")]
         public void create_from_rgb_values_string(int r, int g, int b, string hexR, string hexG, string hexB)
         {
             var hexColor = new HexColor(r, g, b);

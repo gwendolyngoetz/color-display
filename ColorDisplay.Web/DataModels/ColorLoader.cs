@@ -23,7 +23,7 @@ namespace ColorDisplay.Web.DataModel
 
         public ColorInformation(RgbColor rgbColor)
         {
-            Color = new Color(rgbColor.R, rgbColor.B, rgbColor.G);
+            Color = new Color(rgbColor.R, rgbColor.G, rgbColor.B);
             LoadRelatedColors();
         }
 
